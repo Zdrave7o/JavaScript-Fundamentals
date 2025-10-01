@@ -1,7 +1,7 @@
 function merge(arr1, arr2){
     let mergedArr = [];
     for(let i = 0; i< arr1.length; i++){
-        mergedArr[i] = i % 2 === 0? Number(arr1[i]) + Number(arr2[i]):Number(`${arr1[i]}${arr2[i]}`); 
+        mergedArr[i] = i % 2 === 0? Number(arr1[i]) + Number(arr2[i]):`${arr1[i]}${arr2[i]}`; 
     }
 
     console.log(mergedArr.join(" - "));
