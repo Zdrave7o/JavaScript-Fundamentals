@@ -2,23 +2,7 @@ function play(input){
     let health = 100;
     let coins = 0;
 
-    const rooms = [];
-    let length = input.length;
-    let n = 0;
-    while (n < length){
-        let index = input.indexOf("|");
-
-        if(input.includes("|")){
-            let currentLevel = input.slice(0, index);
-            input = input.slice(index + 1);
-            length = input.length;
-            rooms.push(currentLevel);
-        } else {
-            rooms.push(input);
-            break;
-        }
-    }
-
+    const rooms = input.split("|");
     let roomCount = 1;
     let playerAlive = true;
 
