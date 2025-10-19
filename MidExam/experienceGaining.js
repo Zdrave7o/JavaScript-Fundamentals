@@ -8,11 +8,11 @@ function calculateExperience(input){
     function sumExp(){
         let xp = 0;
         for(let i = 0; i < xpEntries.length; i++){
-            battleCount++;
-            const xpEntry = xpEntries[i];
             if(xp >= xpNeeded){
                 return xp;
             }
+            battleCount++;
+            const xpEntry = xpEntries[i];
 
             if(battleCount % 3 === 0){
                 xp+= xpEntry*1.15;
@@ -33,15 +33,19 @@ function calculateExperience(input){
     
     if(totalXp >= xpNeeded){
         console.log(`Player successfully collected his needed experience for ${battleCount} battles.`);
+    } else{
+        let neededExperience = xpNeeded - totalXp;
+        console.log(`Player was not able to collect the needed experience, ${neededExperience.toFixed(2)} more needed.`);
+        
     }
     
 }
 
-calculateExperience([500,
+calculateExperience([400,
 5,
 50,
 100,
 200,
 100,
-30
+20
 ])
